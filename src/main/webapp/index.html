@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIGP | Gestión de tareas</title>
+  <style>
+    body{font-family:Arial,sans-serif;background:#f3f6fb;margin:0;color:#172033}
+    main{max-width:760px;margin:50px auto;padding:28px;background:white;border-radius:14px;box-shadow:0 5px 22px #0001}
+    h1{color:#173b70} label{display:block;margin-top:16px;font-weight:bold}
+    input,select,button{box-sizing:border-box;width:100%;padding:12px;margin-top:7px;border:1px solid #ccd4e0;border-radius:7px}
+    button{background:#174a85;color:white;font-weight:bold;cursor:pointer;margin-top:22px}
+    .links{margin-top:20px} a{color:#174a85}
+  </style>
+</head>
+<body>
+<main>
+  <h1>SIGP — Sistema de Información y Gestión de Proyectos</h1>
+  <p>Módulo académico para registrar y consultar tareas de un proyecto.</p>
+  <form action="tareas" method="post">
+    <label for="nombreTarea">Nombre de la tarea</label>
+    <input id="nombreTarea" name="nombreTarea" required maxlength="120"
+           placeholder="Ej. Diseñar el módulo de reportes">
+    <label for="prioridad">Prioridad</label>
+    <select id="prioridad" name="prioridad">
+      <option value="Alta">Alta</option>
+      <option value="Media" selected>Media</option>
+      <option value="Baja">Baja</option>
+    </select>
+    <button type="submit">Registrar tarea (POST)</button>
+  </form>
+  <div class="links">
+    <a href="tareas?origen=consulta">Consultar tareas (GET)</a>
+  </div>
+</main>
+</body>
+</html>
